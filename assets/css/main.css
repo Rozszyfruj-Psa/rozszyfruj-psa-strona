@@ -3880,3 +3880,16 @@ input, select, textarea {
 		}
 
 	}
+
+/* Rozszyfruj PSa - keep the hero call to action visible on tablets and phones */
+
+	@media screen and (max-width: 1152px) {
+
+		#wrapper > section.intro > header ul.actions {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+		}
+
+	}
