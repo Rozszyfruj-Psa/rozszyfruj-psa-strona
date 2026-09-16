@@ -3893,3 +3893,34 @@ input, select, textarea {
 		}
 
 	}
+
+/* Rozszyfruj PSa - full-bleed hero photo on mobile (may crop top/bottom slightly) */
+
+	@media screen and (max-width: 1152px) {
+
+		#wrapper > section.intro > .content {
+			height: auto;
+			padding: 0;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		#wrapper > section.intro > .content .image.fill {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 1 / 1;
+		}
+
+		#wrapper > section.intro > .content .image.fill img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+
+	}
