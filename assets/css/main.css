@@ -3964,3 +3964,147 @@ input, select, textarea {
 		box-shadow: inset 0 0 0 2px #e16626;
 		color: #e16626 !important;
 	}
+
+/* Rozszyfruj PSa - Section nav (vertical, left column on desktop) */
+
+	#section-nav {
+		position: fixed;
+		left: 1.5rem;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 9000;
+	}
+
+		#section-nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		#section-nav li {
+			margin: 0;
+			padding: 0;
+		}
+
+		#section-nav a {
+			align-items: center;
+			border-bottom: 0;
+			color: rgba(44, 24, 16, 0.5);
+			display: flex;
+			font-family: 'Raleway', Helvetica, sans-serif;
+			font-size: 0.5rem;
+			font-weight: 600;
+			letter-spacing: 0.175em;
+			line-height: 1;
+			padding: 0.5rem 0;
+			text-transform: uppercase;
+			transition: color 0.25s ease-in-out;
+			white-space: nowrap;
+		}
+
+			#section-nav a .tick {
+				background-color: rgba(166, 99, 54, 0.4);
+				display: block;
+				flex-shrink: 0;
+				height: 2px;
+				margin-right: 0.75rem;
+				transition: background-color 0.25s ease-in-out, width 0.25s ease-in-out;
+				width: 1rem;
+			}
+
+			#section-nav a .text {
+				overflow: hidden;
+				transition: opacity 0.25s ease-in-out, max-width 0.25s ease-in-out;
+			}
+
+			#section-nav a:hover,
+			#section-nav a:focus-visible {
+				color: #a66336;
+			}
+
+			#section-nav a:focus-visible {
+				outline: 2px solid #a66336;
+				outline-offset: 0.25rem;
+			}
+
+				#section-nav a:hover .tick,
+				#section-nav a:focus-visible .tick {
+					background-color: #a66336;
+					width: 1.75rem;
+				}
+
+			#section-nav a.active {
+				color: #2c1810;
+			}
+
+				#section-nav a.active .tick {
+					background-color: #a66336;
+					width: 2.25rem;
+				}
+
+		/* Narrow desktops: ticks only (labels would crowd the section headings). */
+		@media screen and (max-width: 1280px) {
+
+			#section-nav a .text {
+				max-width: 0;
+				opacity: 0;
+			}
+
+			#section-nav a:hover .text,
+			#section-nav a:focus-visible .text {
+				max-width: 12rem;
+				opacity: 1;
+			}
+
+		}
+
+/* Rozszyfruj PSa - Call bar (mobile only) */
+
+	#call-bar {
+		display: none;
+	}
+
+	@media screen and (max-width: 1152px) {
+
+		#section-nav {
+			display: none;
+		}
+
+		#call-bar {
+			align-items: center;
+			background-color: #a66336;
+			border-bottom: 0;
+			bottom: 0;
+			color: #ffffff;
+			display: flex;
+			font-family: 'Raleway', Helvetica, sans-serif;
+			font-size: 0.7rem;
+			font-weight: 600;
+			justify-content: center;
+			left: 0;
+			letter-spacing: 0.1em;
+			min-height: 3.25rem;
+			padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px)) 1rem;
+			position: fixed;
+			right: 0;
+			text-align: center;
+			text-transform: uppercase;
+			z-index: 9000;
+		}
+
+			#call-bar:before {
+				margin-right: 0.75rem;
+			}
+
+			#call-bar:hover,
+			#call-bar:active {
+				background-color: #e16626;
+				color: #ffffff;
+			}
+
+		/* Keep the copyright clear of the fixed call bar. */
+		#wrapper .copyright {
+			padding-bottom: 5.5rem;
+		}
+
+	}
