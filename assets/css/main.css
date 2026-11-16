@@ -4058,6 +4058,50 @@ input, select, textarea {
 
 		}
 
+/* Rozszyfruj Psa - Testimonials */
+
+	.testimonial {
+		border-left: solid 0.25rem rgba(144, 144, 144, 0.25);
+		margin: 0 0 3rem 0;
+		padding: 1rem 0 1rem 2rem;
+	}
+
+		.testimonial:last-child {
+			margin-bottom: 0;
+		}
+
+		.testimonial blockquote {
+			border-left: 0;
+			display: flow-root;
+			margin-bottom: 1rem;
+			padding: 0;
+		}
+
+			.testimonial blockquote img {
+				border: solid 0.25rem rgba(144, 144, 144, 0.25);
+				border-radius: 50%;
+				float: left;
+				height: 160px;
+				margin: 0.25rem 1.5rem 0.75rem 0;
+				shape-margin: 0.75rem;
+				shape-outside: circle(50%);
+				width: 160px;
+			}
+
+			.testimonial blockquote p:last-child {
+				margin-bottom: 0;
+			}
+
+	@media screen and (max-width: 736px) {
+
+		.testimonial blockquote img {
+			height: 96px;
+			margin-right: 1rem;
+			width: 96px;
+		}
+
+	}
+
 /* Rozszyfruj PSa - Call bar (mobile only) */
 
 	#call-bar {
